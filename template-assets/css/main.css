@@ -273,12 +273,12 @@ Navigation Style
 }
 /* line 84, ../sass/main.scss */
 .top-nav-collapse .navbar-brand img {
-  width: 52px;
-  height: 52px;
+  width: 32px;
+  height: 32px;
 }
 /* line 89, ../sass/main.scss */
 .top-nav-collapse .nav > li > a {
-  padding: 30px 15px;
+  padding: 20px 15px;
 }
 
     /* ==========================================================================
