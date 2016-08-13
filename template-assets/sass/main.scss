@@ -112,6 +112,7 @@ Sliders Style
                     margin-top: 40px;
                     margin-bottom: 50px;
                     text-transform: uppercase;
+                    // font-family: 'Alex Brush', cursive;
                     span {
                         font-weight: $bold;
                     }
@@ -193,12 +194,17 @@ Welcome Style
             margin-top: 40px;
             margin-bottom: 40px;
         }
+        #welcome-img {
+            height: auto; 
+            width: auto; 
+            max-width: 50%; 
+        }
     }
     /* ==========================================================================
-Services Style
+Menu Style
 ========================================================================== */
     
-    #services {
+    #menu {
         background: $section-dark;
         padding: $section-padding;
         text-align: center;
@@ -207,31 +213,56 @@ Services Style
             color: $Light-primary;
         }
         p {
+            margin-bottom: 40px;
             color: $Light-primary;
         }
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+            .col-lg-4 {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
         .services-box {
-            margin-top: 40px;
-            .col-md-4 {
-                margin-bottom: 20px;
-                .media-left,
-                .media-right,
-                .media-body {
-                    padding-right: 30px;
-                    vertical-align: baseline;
-                    p {
-                        text-align: left;
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            // max-width: 650px;
+            .services-box-caption {
+                display: block;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                color: #fff;
+                opacity: 0;
+                background: rgba(13, 13, 13, .6);
+                @include transition(all .3s ease-in-out);
+                .services-box-caption-content {
+                    position: absolute;
+                    top: 50%;
+                    width: 100%;
+                    text-align: center;
+                    transform: translateY(-50%);
+                    .project-category,
+                    .project-name {
+                        padding: 0 15px;
                     }
-                    h3 {
+                    .project-category {
                         text-transform: uppercase;
-                        color: $Light-primary;
-                        text-align: left;
+                        font-size: $h5-size;
+                        font-weight: 700;
                     }
-                    span {
-                        font-size: $h2-size;
-                        color: $Light-primary;
+                    .project-name {
+                        font-size: $h6-size;
                     }
                 }
             }
+        }
+        .services-box:hover .services-box-caption {
+            opacity: 1;
         }
     }
     /* ==========================================================================
@@ -239,13 +270,16 @@ Portfolio Style
 ========================================================================== */
     
     #portfolio {
+        background: $section-dark;
         padding: $section-padding;
         text-align: center;
         h2 {
             text-transform: uppercase;
+            color: $Light-primary;
         }
         p {
             margin-bottom: 40px;
+            color: $Light-primary;
         }
         .container-fluid {
             padding-left: 0;
@@ -296,64 +330,7 @@ Portfolio Style
             opacity: 1;
         }
     }
-    /* ==========================================================================
-Work Process Style
-========================================================================== */
-    
-    #work-process {
-        padding: $section-padding;
-        text-align: center;
-        .col-lg-3 {
-            margin-top: 40px;
-        }
-        h2 {
-            text-transform: uppercase;
-        }
-        h4 {
-            text-transform: uppercase;
-            color: $Dark-primary;
-        }
-        span {
-            font-size: $icon-size;
-            color: $Dark-primary;
-            margin-bottom: 15px;
-        }
-    }
-    /* ==========================================================================
-Fun Facts Style
-========================================================================== */
-    
-    #fun-facts {
-        background: $section-dark;
-        padding: $section-padding;
-        text-align: center;
-        .col-lg-3 {
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-        h2 {
-            text-transform: uppercase;
-            color: $Light-primary;
-        }
-        p {
-            color: $Light-primary;
-        }
-        h4 {
-            text-transform: uppercase;
-            color: $Light-primary;
-        }
-        .number {
-            color: $Light-primary;
-            font-weight: $bold;
-            padding: 10px 0;
-            margin: 0;
-        }
-        span {
-            font-size: $icon-size;
-            color: $Light-primary;
-            margin-bottom: 15px;
-        }
-    }
+
     /* ==========================================================================
 Our Team Style
 ========================================================================== */
@@ -427,7 +404,7 @@ Testimonials Style
                 line-height: 36px;
                 span {
                     font-weight: $bold;
-                    text-transform: uppercase;
+                    // text-transform: uppercase;
                 }
             }
         }

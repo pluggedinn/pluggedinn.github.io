@@ -84,16 +84,38 @@ $(document).ready(function () {
             $(this).unbind('inview');
         }
     });
+    /***************** Contact form ****************/
+
+    $('#send-mail').bind('click', function (event) {
+        var name = document.querySelector('#Name').value;
+        var email = document.querySelector('#Email').value;
+        var message = document.querySelector('#Message').value;
+        document.location.href = "mailto:costaverdebeachclub@gmail.com?subject=Request: "+email+" "+name+"&body="+message+"";
+
+        });
+
     /***************** Google Map ******************/
 
     function initialize() {
         var mapCanvas = document.getElementById('map');
+        var myLatLng = new google.maps.LatLng(42.556779, 14.115246);
+
         var mapOptions = {
-            center: new google.maps.LatLng(42.556779, 14.115246),
+            center: myLatLng,
             zoom: 17,
+            draggable: false,
+            disableDoubleClickZoom: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
+        };
+
         var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            title: "Costa Verde Beach Club"
+        });
+
+        marker.setMap(map);
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
