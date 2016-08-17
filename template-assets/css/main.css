@@ -416,7 +416,7 @@ Welcome Style
 #welcome #welcome-img {
   height: auto;
   width: auto;
-  max-width: 50%;
+  max-width: 30%;
 }
 
     /* ==========================================================================
@@ -453,6 +453,7 @@ Menu Style
   display: block;
   position: relative;
   margin: 0 auto;
+  max-width: 650px;
 }
 /* line 232, ../sass/main.scss */
 #menu .services-box .services-box-caption {
